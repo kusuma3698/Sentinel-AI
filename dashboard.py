@@ -7,7 +7,12 @@ import threading
 import math
 import time
 import av
-import winsound
+import sys
+
+if sys.platform == "win32":
+    import winsound
+else:
+    winsound = None
 from streamlit_webrtc import webrtc_streamer, VideoProcessorBase, AudioProcessorBase, WebRtcMode
 from datetime import datetime
 from PIL import Image
